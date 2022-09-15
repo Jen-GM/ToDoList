@@ -49,7 +49,7 @@ const Home = () => {
           </ul>
           <div className="footer-container">
           <p className="card-text">
-            <medium className="text-muted">{`${addTarea.length ? addTarea.length + ' items left' : 'No hay tareas. Añadir una.'}`}</medium>
+            <small className="text-muted">{`${addTarea.length ? addTarea.length + ' items left' : 'No hay tareas. Añadir una.'}`}</small>
           </p>
           </div>
         </div>
