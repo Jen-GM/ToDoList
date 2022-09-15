@@ -14,10 +14,9 @@ const Home = () => {
 
   function eliminarTarea(i) {
     console.log(i);
-    let newArray = addTarea.filter((element, indice) => indice !== i)
+    let newArray = addTarea.filter((element, indice) => indice !== i);
     setAddTarea(newArray);
-  } 
-
+  }
 
   console.log(addTarea); //Revisar la tarea añadida
 
@@ -37,10 +36,22 @@ const Home = () => {
             />
             <div className="nuevaTarea">
               {addTarea.map((element, i) => {
-                return <AgregarTareas tipoTarea={element} borrarFuncion={eliminarTarea} key={i} indice={i}/>;
+                return (
+                  <AgregarTareas
+                    tipoTarea={element}
+                    borrarFuncion={eliminarTarea}
+                    key={i}
+                    indice={i}
+                  />
+                );
               })}
             </div>
           </ul>
+          <div className="footer-container">
+          <p className="card-text">
+            <medium className="text-muted">{`${addTarea.length ? addTarea.length + ' items left' : 'No hay tareas. Añadir una.'}`}</medium>
+          </p>
+          </div>
         </div>
       </div>
     </div>
