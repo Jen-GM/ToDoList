@@ -12,26 +12,34 @@ const Home = () => {
     }
   }
 
-  console.log(addTarea);  //Revisar la tarea añadida
+  function eliminarTarea(i) {
+    console.log(i);
+    let newArray = addTarea.filter((element, indice) => indice !== i)
+    setAddTarea(newArray);
+  } 
+
+
+  console.log(addTarea); //Revisar la tarea añadida
 
   return (
-    <div className="contenedor">
-      <h1 className="text-center mt-5">Todos</h1>
+    <div className="contenedor-total">
+      <h1 className="text-center mt-5">To Do List</h1>
       <div className="contenedor-tareas">
         <div className="input-group mb-3">
-          <ul>
+          <ul className="w-100">
             <input
               type="type"
-              className="form-control"
+              className="form-control ml-1"
               placeholder="Añadir Tarea"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               onKeyDown={listaTareas}
             />
             <div className="nuevaTarea">
-				<AgregarTareas 
-				tipoTarea = {addTarea} />
-			</div>
+              {addTarea.map((element, i) => {
+                return <AgregarTareas tipoTarea={element} borrarFuncion={eliminarTarea} key={i} indice={i}/>;
+              })}
+            </div>
           </ul>
         </div>
       </div>

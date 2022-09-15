@@ -1,0 +1,12 @@
+.contenedor-tarea{
+    width: 500px;
+    height: 50px; 
+    margin-top: 50px; 
+    margin-left: auto; 
+    margin-right: auto;
+    border-bottom: 1px solid black;
+}
+
+.tareaIndividual {
+  color: black;
+}
