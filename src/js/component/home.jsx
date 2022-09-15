@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AgregarTareas from "./AgregarTareas";
+import AgregarTareas from "./AdministrarTareas";
 
 //create your first component
 const Home = () => {
